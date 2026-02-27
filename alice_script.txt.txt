@@ -1,0 +1,397 @@
+================================================================================
+ALICE HPC SCRIPTS FOR SALMON QUANTIFICATION PIPELINE
+================================================================================
+All bash scripts used on the University of Leicester ALICE cluster for 
+processing 734 single-cell RNA-seq samples from Camp et al. (2015)
+
+Author: Tess Ironman
+Date: February 27, 2026
+
+NOTE: Claude AI (Anthropic) was used for code formatting, debugging technical 
+errors (file paths, SLURM configuration, disk quota management), and 
+documentation. All scientific decisions and analytical choices were made 
+independently by the researcher.
+
+================================================================================
+SCRIPT 1: Initial Setup and Module Configuration
+================================================================================
+# Load required modules
+module load salmon/1.10.2-5pennjh
+module load sratoolkit/3.0.0-5fetwpi
+module load python/3.10.12-tggsi7t
+
+# Verify modules loaded correctly
+salmon --version
+fastq-dump --version
+python --version
+
+# Configure SRA Toolkit
+vdb-config --set /repository/user/main/public/root="$HOME/ncbi"
+mkdir -p ~/ncbi/public
+
+# Create project directory structure
+mkdir -p ~/organoid_project
+cd ~/organoid_project
+mkdir -p fastq salmon_output scripts logs reference
+
+
+================================================================================
+SCRIPT 2: Download and Prepare Reference Transcriptome
+================================================================================
+#!/bin/bash
+# File: build_salmon_index.sh
+# Purpose: Download human transcriptome and build Salmon index
+
+cd ~/organoid_project/reference
+
+# Download GENCODE human transcriptome release 46
+wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/gencode.v46.transcripts.fa.gz
+
+# Decompress
+gunzip gencode.v46.transcripts.fa.gz
+
+# Build Salmon index
+# k-mer length = 31 (default)
+# Note: Warnings about missing decoy sequences are expected and acceptable
+salmon index -t gencode.v46.transcripts.fa -i salmon_index -k 31
+
+echo "Salmon index built successfully"
+ls -lh salmon_index/
+
+
+================================================================================
+SCRIPT 3: Download Sample Metadata from SRA
+================================================================================
+#!/bin/bash
+# File: download_metadata.sh
+# Purpose: Download sample metadata from NCBI SRA
+
+cd ~/organoid_project
+
+# Download run info table directly from SRA
+wget -O SraRunTable.csv 'https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?save=efetch&db=sra&rettype=runinfo&term=SRP066834'
+
+# Extract all 734 SRR accession numbers
+awk -F',' 'NR>1 {print $1}' SraRunTable.csv > all_734_SRR_list.txt
+
+# Verify count
+wc -l all_734_SRR_list.txt
+# Expected output: 734 all_734_SRR_list.txt
+
+# Check first and last samples
+head -5 all_734_SRR_list.txt
+tail -5 all_734_SRR_list.txt
+
+
+================================================================================
+SCRIPT 4: Main Salmon Quantification Pipeline (SLURM Job Array)
+================================================================================
+#!/bin/bash
+#SBATCH --job-name=salmon_quant
+#SBATCH --array=1-16
+#SBATCH --time=02:00:00
+#SBATCH --mem=8G
+#SBATCH --cpus-per-task=4
+#SBATCH --output=../logs/salmon_%A_%a.out
+#SBATCH --error=../logs/salmon_%A_%a.err
+
+# File: salmon_pipeline.sh
+# Purpose: Download FASTQ, run Salmon quantification, cleanup
+# Usage: sbatch salmon_pipeline.sh (array range set by batch script)
+
+# Load required modules
+module load salmon/1.10.2-5pennjh
+module load sratoolkit/3.0.0-5fetwpi
+
+# Define directories
+PROJECT_DIR=~/organoid_project
+FASTQ_DIR=${PROJECT_DIR}/fastq
+SALMON_INDEX=${PROJECT_DIR}/reference/salmon_index
+OUTPUT_DIR=${PROJECT_DIR}/salmon_output
+
+# Get SRR accession number for this array task
+SRR=$(sed -n "${SLURM_ARRAY_TASK_ID}p" ${PROJECT_DIR}/all_734_SRR_list.txt)
+
+echo "========================================"
+echo "Processing ${SRR}"
+echo "Array task: ${SLURM_ARRAY_TASK_ID}"
+echo "Start time: $(date)"
+echo "========================================"
+
+# Download paired-end FASTQ files from SRA
+echo "Downloading ${SRR}..."
+cd ${FASTQ_DIR}
+fasterq-dump --split-files ${SRR} --threads 4
+
+# Verify download succeeded
+if [ ! -f "${SRR}_1.fastq" ]; then
+    echo "ERROR: Download failed for ${SRR}"
+    exit 1
+fi
+
+echo "Download complete for ${SRR}"
+
+# Run Salmon quantification
+echo "Running Salmon quantification on ${SRR}..."
+salmon quant \
+    -i ${SALMON_INDEX} \
+    -l A \
+    -1 ${FASTQ_DIR}/${SRR}_1.fastq \
+    -2 ${FASTQ_DIR}/${SRR}_2.fastq \
+    -p 4 \
+    --validateMappings \
+    -o ${OUTPUT_DIR}/${SRR}
+
+# Check if Salmon completed successfully
+if [ $? -eq 0 ]; then
+    echo "Salmon quantification completed successfully for ${SRR}"
+    
+    # Delete FASTQ files to save disk space
+    rm ${FASTQ_DIR}/${SRR}_1.fastq ${FASTQ_DIR}/${SRR}_2.fastq
+    echo "Cleaned up FASTQ files for ${SRR}"
+else
+    echo "ERROR: Salmon quantification failed for ${SRR}"
+    exit 1
+fi
+
+echo "========================================"
+echo "End time: $(date)"
+echo "Successfully processed ${SRR}"
+echo "========================================"
+
+
+================================================================================
+SCRIPT 5: Automated Batch Submission Script
+================================================================================
+#!/bin/bash
+# File: submit_all_734.sh
+# Purpose: Automatically submit all 734 samples in batches of 16
+# Note: Starts from sample 17 as samples 1-16 were processed in pilot run
+
+TOTAL=734
+BATCH_SIZE=16
+START_SAMPLE=17  # Skip first 16 already processed
+
+for START in $(seq $START_SAMPLE $BATCH_SIZE $TOTAL); do
+    END=$((START + BATCH_SIZE - 1))
+    if [ $END -gt $TOTAL ]; then
+        END=$TOTAL
+    fi
+    
+    echo "========================================"
+    echo "=== Submitting batch $START-$END ==="
+    echo "========================================"
+    
+    # Update array range in the SLURM script
+    sed -i "s/#SBATCH --array=.*/#SBATCH --array=$START-$END/" salmon_pipeline.sh
+    
+    # Submit batch to SLURM
+    JOB_ID=$(sbatch salmon_pipeline.sh | awk '{print $4}')
+    echo "Job ID: $JOB_ID"
+    
+    # Wait for all jobs in this batch to complete
+    echo "Waiting for batch to complete..."
+    while squeue -u $USER -h | grep -q $JOB_ID; do
+        RUNNING=$(squeue -u $USER -h | grep " R " | wc -l)
+        PENDING=$(squeue -u $USER -h | grep " PD " | wc -l)
+        COMPLETED=$(ls ~/organoid_project/salmon_output/ 2>/dev/null | wc -l)
+        echo "  Running: $RUNNING | Pending: $PENDING | Completed: $COMPLETED/$TOTAL"
+        sleep 60
+    done
+    
+    echo "Batch $START-$END complete!"
+    echo ""
+done
+
+echo "=========================================="
+echo "ALL 734 SAMPLES PROCESSED SUCCESSFULLY!"
+echo "=========================================="
+echo "Total samples completed: $(ls ~/organoid_project/salmon_output/ | wc -l)"
+
+
+================================================================================
+SCRIPT 6: Run Batch Submission in Background
+================================================================================
+#!/bin/bash
+# Commands to start the batch processing pipeline
+
+cd ~/organoid_project/scripts
+
+# Run in background with nohup (survives logout)
+nohup ./submit_all_734.sh > batch_progress.log 2>&1 &
+
+# Note the process ID
+echo "Batch processing started with PID: $!"
+
+# Monitor progress
+tail -f batch_progress.log
+
+# To check progress later:
+# ls ~/organoid_project/salmon_output/ | wc -l
+
+
+================================================================================
+SCRIPT 7: Monitoring and Troubleshooting Commands
+================================================================================
+#!/bin/bash
+# Useful commands for monitoring progress and troubleshooting
+
+# Check current job status
+squeue -u tlti1
+
+# Count completed samples
+ls ~/organoid_project/salmon_output/ | wc -l
+
+# View recent log entries
+tail -50 ~/organoid_project/scripts/batch_progress.log
+
+# Check specific job logs
+cat ~/organoid_project/logs/salmon_JOBID_ARRAYID.out
+cat ~/organoid_project/logs/salmon_JOBID_ARRAYID.err
+
+# Extract timing information from logs
+grep "Start time\|End time" ~/organoid_project/logs/salmon_*.out
+
+# Check disk usage
+du -sh ~/organoid_project/
+quota -s
+
+# Kill stuck batch processing (if needed)
+pkill -f submit_all_734
+
+# Check if a specific sample completed successfully
+ls ~/organoid_project/salmon_output/SRR2967608/quant.sf
+
+
+================================================================================
+SCRIPT 8: Post-Processing - Combine Salmon Outputs
+================================================================================
+#!/bin/bash
+# File: run_combination.sh
+# Purpose: Execute Python script to combine all Salmon outputs
+# Run this AFTER all 734 samples are quantified
+
+cd ~/organoid_project/scripts
+
+# Load Python module
+module load python/3.10.12-tggsi7t
+
+# Install required Python packages (first time only)
+pip install --user pandas numpy
+
+# Run combination script
+python3.9 combine_salmon_outputs.py
+
+# Verify output was created
+ls -lh ~/organoid_project/salmon_combined_expression.txt
+
+# Check dimensions
+head -5 ~/organoid_project/salmon_combined_expression.txt | cut -f1-5
+
+echo "Expression matrix created successfully"
+
+
+================================================================================
+SCRIPT 9: Download Results to Local Computer
+================================================================================
+#!/bin/bash
+# File: download_results.sh
+# Run this script on your LOCAL computer (not on ALICE)
+# Purpose: Transfer final expression matrix from ALICE to local machine
+
+# Download the combined expression matrix
+scp tlti1@alice.le.ac.uk:~/organoid_project/salmon_combined_expression.txt ~/Downloads/
+
+# Optional: Download cluster assignments (after Scanpy analysis)
+scp tlti1@alice.le.ac.uk:~/organoid_project/salmon_cluster_assignments.csv ~/Downloads/
+
+# Optional: Download all log files for timing analysis
+scp -r tlti1@alice.le.ac.uk:~/organoid_project/logs ~/Downloads/alice_logs/
+
+echo "Download complete!"
+
+
+================================================================================
+SCRIPT 10: Cleanup (Optional - Run After Project Completion)
+================================================================================
+#!/bin/bash
+# File: cleanup_alice.sh
+# Purpose: Clean up intermediate files after project completion
+# WARNING: Only run after verifying all results are downloaded locally
+
+cd ~/organoid_project
+
+# Remove FASTQ directory (should already be empty)
+rm -rf fastq/
+
+# Remove individual Salmon output directories (keep combined matrix)
+# Uncomment next line only if you're sure you don't need individual outputs
+# rm -rf salmon_output/
+
+# Remove reference files (can be re-downloaded if needed)
+# Uncomment next line only if you need to free up space
+# rm -rf reference/
+
+# Keep: salmon_combined_expression.txt, scripts/, logs/
+
+echo "Cleanup complete"
+echo "Remaining disk usage:"
+du -sh ~/organoid_project/
+
+
+================================================================================
+SCRIPT 11: Extract Performance Metrics
+================================================================================
+#!/bin/bash
+# File: extract_timing.sh
+# Purpose: Extract timing information for performance benchmarking
+
+cd ~/organoid_project/logs
+
+echo "Extracting processing times from SLURM logs..."
+echo "Sample,Start_Time,End_Time" > timing_data.csv
+
+for logfile in salmon_*_*.out; do
+    SRR=$(grep "Processing SRR" $logfile | awk '{print $2}')
+    START=$(grep "Start time:" $logfile | cut -d' ' -f3-)
+    END=$(grep "End time:" $logfile | cut -d' ' -f3-)
+    
+    if [ ! -z "$SRR" ]; then
+        echo "$SRR,$START,$END" >> timing_data.csv
+    fi
+done
+
+echo "Timing data extracted to timing_data.csv"
+head -10 timing_data.csv
+
+# Calculate summary statistics (requires GNU date)
+# This shows average processing time per sample
+awk -F',' 'NR>1 {print $1}' timing_data.csv | wc -l
+
+
+================================================================================
+TROUBLESHOOTING NOTES
+================================================================================
+
+Common Issues Encountered:
+
+1. FILE PATH ERROR (Fixed)
+   Problem: Script looked for ../all_734_SRR_list.txt instead of ./all_734_SRR_list.txt
+   Solution: sed -i 's|${PROJECT_DIR}/../all_734_SRR_list.txt|${PROJECT_DIR}/all_734_SRR_list.txt|' salmon_pipeline.sh
+
+2. QOS JOB LIMIT
+   Problem: Can only submit 16 jobs at once on standard queue
+   Solution: Batch submission script waits for each batch to complete before submitting next
+
+3. DISK QUOTA
+   Problem: 100GB limit insufficient for storing all FASTQ files
+   Solution: Delete FASTQ files immediately after Salmon quantification
+
+4. MODULE LOADING
+   Problem: Need to reload modules in SLURM job scripts
+   Solution: Always include module load commands at top of job scripts
+
+5. SRA TOOLKIT CONFIGURATION
+   Problem: First-time use requires vdb-config setup
+   Solution: Run vdb-config --set command before using fasterq-dump
+
