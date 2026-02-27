@@ -62,7 +62,7 @@ ui <- tagList(
              )
     ),
     
-    # Alternative pipeline page ijff
+    # Alternative pipeline page
     tabPanel("Alternative Pipeline",
              mainPanel(
                tabsetPanel(
