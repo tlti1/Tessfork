@@ -1,0 +1,186 @@
+================================================================================
+PYTHON SCRIPTS FOR SALMON OUTPUT PROCESSING AND SCANPY ANALYSIS
+=============================================================================
+Python scripts used for combining Salmon quantification outputs
+
+Author: Tess Ironman
+Date: February 27, 2026
+Python Version: 3.9 / 3.10.12
+
+NOTE: Claude AI (Anthropic) was used for code formatting, debugging (data type 
+conversions, ID parsing), and documentation. All analytical decisions, parameter 
+selections, and biological interpretations were made independently by the researcher.
+================================================================================
+SCRIPT 1: Combine Salmon Outputs into Expression Matrix
+================================================================================
+#!/usr/bin/env python3
+"""
+File: combine_salmon_outputs.py
+Purpose: Aggregate individual Salmon quantification outputs into a single 
+         gene expression matrix suitable for Scanpy analysis
+
+Input: 734 directories in salmon_output/, each containing quant.sf files
+Output: salmon_combined_expression.txt (734 cells × ~62,646 genes)
+
+Conversion: Transcript TPM → Gene-level TPM → log2(TPM + 1)
+This matches the log-scale format used in the original Camp et al. study
+"""
+
+import pandas as pd
+import numpy as np
+import os
+from pathlib import Path
+
+print("="*70)
+print("SALMON OUTPUT COMBINATION SCRIPT")
+print("="*70)
+
+# ═══════════════════════════════════════════════════════════════════════════
+# CONFIGURATION
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Define directories
+project_dir = Path.home() / "organoid_project"
+salmon_dir = project_dir / "salmon_output"
+output_file = project_dir / "salmon_combined_expression.txt"
+
+print(f"\nProject directory: {project_dir}")
+print(f"Salmon output directory: {salmon_dir}")
+print(f"Output file: {output_file}")
+
+# ═══════════════════════════════════════════════════════════════════════════
+# IDENTIFY SAMPLES
+# ═══════════════════════════════════════════════════════════════════════════
+
+print("\n" + "="*70)
+print("STEP 1: Identifying samples")
+print("="*70)
+
+# Get list of all sample directories
+samples = [d.name for d in salmon_dir.iterdir() if d.is_dir()]
+samples = sorted([s for s in samples if s.startswith('SRR')])
+
+print(f"Found {len(samples)} Salmon output directories")
+print(f"First 5 samples: {samples[:5]}")
+print(f"Last 5 samples: {samples[-5:]}")
+
+if len(samples) == 0:
+    print("ERROR: No samples found!")
+    exit(1)
+
+# ═══════════════════════════════════════════════════════════════════════════
+# DEFINE HELPER FUNCTIONS
+# ═══════════════════════════════════════════════════════════════════════════
+
+def extract_gene_id(transcript_name):
+    """
+    Extract gene ID from GENCODE transcript identifier.
+    
+    GENCODE format: ENST00000456328.2|ENSG00000223972.5|OTTHUMG...|...
+    We extract ENSG00000223972 (remove version number)
+    
+    Args:
+        transcript_name (str): Full GENCODE transcript identifier
+        
+    Returns:
+        str: Gene ID without version number (e.g., 'ENSG00000223972')
+    """
+    parts = transcript_name.split('|')
+    
+    if len(parts) > 1:
+        # Second field contains gene ID with version
+        gene_id_with_version = parts[1]
+        # Remove version number (e.g., ENSG00000223972.5 → ENSG00000223972)
+        gene_id = gene_id_with_version.split('.')[0]
+        return gene_id
+    else:
+        # Fallback: remove version from whatever we have
+        return transcript_name.split('.')[0]
+
+# ═══════════════════════════════════════════════════════════════════════════
+# PROCESS EACH SAMPLE
+# ═══════════════════════════════════════════════════════════════════════════
+
+print("\n" + "="*70)
+print("STEP 2: Processing individual samples")
+print("="*70)
+
+expression_data = {}
+failed_samples = []
+
+for i, sample in enumerate(samples, 1):
+    quant_file = salmon_dir / sample / "quant.sf"
+    
+    # Check if quantification file exists
+    if not quant_file.exists():
+        print(f"WARNING: {sample} missing quant.sf file - skipping")
+        failed_samples.append(sample)
+        continue
+    
+    try:
+        # Read Salmon quantification output
+        # Columns: Name, Length, EffectiveLength, TPM, NumReads
+        df = pd.read_csv(quant_file, sep='\t')
+        
+        # Extract gene IDs from transcript names
+        df['gene_id'] = df['Name'].apply(extract_gene_id)
+        
+        # Aggregate transcript-level TPM to gene-level TPM
+        # Sum TPM values for all transcripts from the same gene
+        gene_tpm = df.groupby('gene_id')['TPM'].sum()
+        
+        # Convert to log2(TPM + 1) scale
+        # This matches the log-scale normalization in the original study
+        # Adding 1 prevents log(0) which is undefined
+        gene_tpm_log = np.log2(gene_tpm + 1)
+        
+        # Store in dictionary
+        expression_data[sample] = gene_tpm_log
+        
+        # Progress update every 50 samples
+        if i % 50 == 0:
+            print(f"Processed {i}/{len(samples)} samples...")
+        
+    except Exception as e:
+        print(f"ERROR processing {sample}: {str(e)}")
+        failed_samples.append(sample)
+
+print(f"\nSuccessfully processed: {len(expression_data)} samples")
+if failed_samples:
+    print(f"Failed samples ({len(failed_samples)}): {failed_samples[:10]}...")
+
+# ═══════════════════════════════════════════════════════════════════════════
+# CREATE EXPRESSION MATRIX
+# ═══════════════════════════════════════════════════════════════════════════
+
+print("\n" + "="*70)
+print("STEP 3: Creating expression matrix")
+print("="*70)
+
+# Combine all samples into a single DataFrame
+# Each column is a sample, each row is a gene
+expr_matrix = pd.DataFrame(expression_data)
+
+print(f"Initial matrix: {expr_matrix.shape[0]} genes × {expr_matrix.shape[1]} cells")
+
+# Transpose so cells are rows and genes are columns
+# This matches the format expected by Scanpy
+expr_matrix = expr_matrix.T
+
+print(f"Transposed matrix: {expr_matrix.shape[0]} cells × {expr_matrix.shape[1]} genes")
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SAVE OUTPUT
+# ═══════════════════════════════════════════════════════════════════════════
+
+print("\n" + "="*70)
+print("STEP 4: Saving expression matrix")
+print("="*70)
+
+print(f"Saving to: {output_file}")
+expr_matrix.to_csv(output_file, sep='\t')
+
+print("Successfully saved!")
+
+# ═══════════════════════════════════════════════════════════════════════════
+
