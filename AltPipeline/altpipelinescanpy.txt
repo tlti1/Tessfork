@@ -4,6 +4,7 @@
 # Seurat/Monocle. Figure 3D shows t-SNE clustering of cerebral organoid cells
 # with different cell populations colored and different experiment timepoints
 # shown as different marker shapes.
+# Script developed with assistance from Claude AI (Anthropic) for code formatting and debugging
 
 #importing required libraries 
 import scanpy as sc #main single cell analysis library 
