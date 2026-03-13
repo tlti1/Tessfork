@@ -218,3 +218,10 @@ plt.show()
 
 #print msg to show everything ran smoothly 
 print("done and final figure saved")
+
+#SEPERATE CODE- 
+#find marker genes for each cluster
+sc.tl.rank_genes_groups(adata, 'leiden', method='wilcoxon')
+
+#show top 10 genes per cluster
+sc.pl.rank_genes_groups(adata, n_genes=10, sharey=False)
