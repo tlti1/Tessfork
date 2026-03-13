@@ -1,0 +1,31 @@
+# CONVERT SRA METADATA CSV TO ACCESSION LIST
+#
+# Why: The download and quantification scripts need a simple list
+# of SRR accession numbers (one per line), but GEO provides a CSV
+#
+# This extracts the "Run" column from SraRunTable.txt (which is CSV format)
+# and creates SraAccList.txt
+# Code formatting and debugging assisted by Claude AI (Anthropic, 2026)
+ 
+BASE_DIR="/scratch/alice/t/tlti1/altpipeline"
+METADATA_DIR="$BASE_DIR/metadata"
+ 
+echo "=== Preparing SRR Accession List ==="
+echo ""
+ 
+# Check if SraRunTable.txt exists (the CSV file from SRA)
+if [ ! -f "$METADATA_DIR/SraRunTable.txt" ]; then
+    echo "ERROR: SraRunTable.txt not found in $METADATA_DIR"
+    echo "Please download it from SRA Run Selector"
+    exit 1
+fi
+ 
+echo "Found: $METADATA_DIR/SraRunTable.txt"
+ 
+# Extract the "Run" column (SRR accessions) from CSV
+# Skip the header line, extract first column (Run/SRR numbers)
+tail -n +2 "$METADATA_DIR/SraRunTable.txt" | cut -d',' -f1 > "$METADATA_DIR/SraAccList.txt"
+ 
+# Count how many accessions
+NUM_ACC=$(wc -l < "$METADATA_DIR/SraAccList.txt")
+ 
