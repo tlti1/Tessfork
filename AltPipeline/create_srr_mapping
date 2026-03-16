@@ -1,0 +1,81 @@
+"""
+Map SRR accessions to experiment names for proper marker shapes
+"""
+ 
+import csv
+import pandas as pd
+# Note: Code formatting and troubleshooting assisted by Claude AI (Anthropic)
+
+# Read CSV and group by experiment type
+with open('/scratch/alice/t/tlti1/altpipeline/metadata/SraRunTable.csv') as f:
+    reader = csv.DictReader(f)
+    all_rows = list(reader)
+ 
+# Track counters for region assignment
+esc_53d_counter = 0
+ipsc_58d_counter = 0  
+fetal_12wpc_counter = 0
+ 
+metadata = []
+for row in all_rows:
+    srr = row['Run']
+    source = row['source_name']
+    stage = row['stage']
+    tissue = row['tissue']
+    
+    # Map to experiment names matching paper format
+    if 'iPSC' in source:
+        if '33 days' in stage:
+            exp = 'hOrg33d'
+        elif '35 days' in stage:
+            exp = 'hOrg35d'
+        elif '37 days' in stage:
+            exp = 'hOrg37d'
+        elif '41 days' in stage:
+            exp = 'hOrg41d'
+        elif '65 days' in stage:
+            exp = 'hOrg65d'
+        elif '58 days' in stage:
+            ipsc_58d_counter += 1
+            if ipsc_58d_counter <= 43:  # First 43 = region 3
+                exp = 'iPSC_reg3_58d'
+            else:  # Remaining 36 = region 4
+                exp = 'iPSC_reg4_58d'
+        else:
+            exp = f'iPSC_{stage}'
+            
+    elif 'ESC' in source or 'H9' in source:
+        if '53 days' in stage:
+            esc_53d_counter += 1
+            if esc_53d_counter <= 48:  # First 48 = region 1
+                exp = 'ESC_reg1_53d'
+            else:  # Next 48 = region 2
+                exp = 'ESC_reg2_53d'
+        else:
+            exp = f'ESC_{stage}'
+            
+    elif 'fetal' in source.lower():
+        if '12 weeks' in stage:
+            fetal_12wpc_counter += 1
+            if fetal_12wpc_counter <= 81:  # First 81 = chip 1
+                exp = 'fetal_12wpc_c1'
+            else:  # Remaining 83 = chip 2
+                exp = 'fetal_12wpc_c2'
+        elif '13 weeks' in stage:
+            exp = 'fetal_13wpc'
+        else:
+            exp = 'fetal'
+    else:
+        exp = source
+        
+    metadata.append({'Run': srr, 'experiment': exp})
+ 
+# Convert to DataFrame and save
+df = pd.DataFrame(metadata)
+print("Experiment distribution:")
+print(df['experiment'].value_counts())
+print()
+ 
+# Save mapping
+df.to_csv('/scratch/alice/t/tlti1/altpipeline/metadata/srr_to_experiment_map.csv', index=False)
+print("Saved mapping to: /scratch/alice/t/tlti1/altpipeline/metadata/srr_to_experiment_map.csv")
