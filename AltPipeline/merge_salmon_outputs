@@ -1,0 +1,121 @@
+"""
+Merge Salmon quantification outputs into expression matrix
+ 
+This script:
+1. Reads all 734 quant.sf files
+2. Aggregates transcript-level TPM to gene-level
+3. Log2 transforms: log2(TPM + 1)
+4. Creates matrix: 734 cells × genes
+5. Outputs tab-delimited file matching paper format
+ 
+Usage: python 07_merge_salmon_outputs.py
+"""
+# Note: Code formatting and troubleshooting assisted by Claude AI (Anthropic)
+
+import pandas as pd
+import numpy as np
+from pathlib import Path
+import sys
+ 
+# Paths
+BASE_DIR = Path("/scratch/alice/t/tlti1/altpipeline")
+QUANT_DIR = BASE_DIR / "salmon_quant"
+METADATA = BASE_DIR / "metadata" / "SraAccList.txt"
+OUTPUT_FILE = BASE_DIR / "results" / "salmon_expression_matrix.txt"
+REFERENCE = BASE_DIR / "reference" / "gencode.v46.transcripts.fa.gz"
+ 
+print("=" * 60)
+print("MERGING SALMON OUTPUTS INTO EXPRESSION MATRIX")
+print("=" * 60)
+print()
+ 
+# Read sample list
+print("Reading sample list...")
+with open(METADATA) as f:
+    samples = [line.strip() for line in f]
+print(f"Found {len(samples)} samples")
+print()
+ 
+# Build transcript to gene mapping from GENCODE
+print("Building transcript-to-gene mapping...")
+import gzip
+tx_to_gene = {}
+ 
+with gzip.open(REFERENCE, 'rt') as f:
+    for line in f:
+        if line.startswith('>'):
+            # Parse GENCODE header
+            # Example: >ENST00000456328.2|ENSG00000290825.1|...
+            parts = line[1:].split('|')
+            if len(parts) >= 2:
+                transcript_id = parts[0].split('.')[0]  # Remove version
+                gene_id = parts[1].split('.')[0]
+                tx_to_gene[transcript_id] = gene_id
+ 
+print(f"Mapped {len(tx_to_gene)} transcripts to genes")
+print()
+ 
+# Process each sample
+print("Processing Salmon outputs...")
+gene_expression = {}  # {gene_id: {sample: TPM}}
+ 
+for i, sample in enumerate(samples, 1):
+    if i % 50 == 0:
+        print(f"  Processed {i}/{len(samples)} samples...")
+    
+    quant_file = QUANT_DIR / sample / "quant.sf"
+    
+    if not quant_file.exists():
+        print(f"WARNING: Missing {quant_file}")
+        continue
+    
+    # Read Salmon output
+    df = pd.read_csv(quant_file, sep='\t')
+    
+    # Aggregate transcripts to genes
+    for _, row in df.iterrows():
+        tx_id = row['Name'].split('.')[0]  # Remove version
+        tpm = row['TPM']
+        
+        # Get gene ID
+        gene_id = tx_to_gene.get(tx_id, tx_id)  # Use tx_id if not found
+        
+        # Sum TPM values for same gene
+        if gene_id not in gene_expression:
+            gene_expression[gene_id] = {}
+        
+        if sample not in gene_expression[gene_id]:
+            gene_expression[gene_id][sample] = 0
+        
+        gene_expression[gene_id][sample] += tpm
+ 
+print(f"Processed all {len(samples)} samples")
+print(f"Found {len(gene_expression)} genes")
+print()
+ 
+# Convert to DataFrame
+print("Building expression matrix...")
+expr_matrix = pd.DataFrame(gene_expression).T  # Genes as rows
+expr_matrix = expr_matrix[samples]  # Ensure correct sample order
+expr_matrix.fillna(0, inplace=True)
+ 
+print(f"Matrix shape: {expr_matrix.shape}")
+print()
+ 
+# Log2 transform: log2(TPM + 1)
+print("Log2 transforming...")
+expr_matrix_log = np.log2(expr_matrix + 1)
+ 
+# Transpose to match paper format (cells as rows, genes as columns)
+print("Transposing to cells × genes format...")
+expr_matrix_final = expr_matrix_log.T
+ 
+print(f"Final matrix: {expr_matrix_final.shape} (cells × genes)")
+print()
+ 
+# Save
+print(f"Saving to {OUTPUT_FILE}...")
+OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+expr_matrix_final.to_csv(OUTPUT_FILE, sep='\t')
+ 
+print("✓ Complete!")
