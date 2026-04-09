@@ -1,0 +1,7 @@
+
+## Acknowledgements
+
+#- Claude AI (Anthropic) was used for troubleshooting and debugging during pipeline development
+#- Dataset S2 from Camp et al. (2015) was used for PCA gene selection and cluster validation
+#- ALICE HPC cluster, University of Leicester
+
