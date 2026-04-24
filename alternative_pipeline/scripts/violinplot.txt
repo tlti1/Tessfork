@@ -1,0 +1,113 @@
+import scanpy as sc
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# ── 1. Load count matrix ──────────────────────────────────────────────────────
+print("Loading data...")
+df = pd.read_csv(
+    "all_cells_counts.txt",
+    sep="\t",
+    comment="#",
+    index_col=0
+)
+df = df.drop(columns=["Chr", "Start", "End", "Strand", "Length", "gene_id"])
+df.columns = [c.split("/")[-1].replace("_sorted.bam", "") for c in df.columns]
+
+# ── 2. Load metadata ──────────────────────────────────────────────────────────
+meta = pd.read_csv("SraRunTable_2_.csv", index_col="Run")
+
+relevant_mask = meta["tissue"].isin([
+    "Microdissected cortical-like ventricle from cerebral organoid",
+    "Fetal neocortex"
+])
+relevant_srr = [s for s in meta[relevant_mask].index if s in df.columns]
+df_relevant = df[relevant_srr].T
+print(f"Cells: {df_relevant.shape[0]}")
+
+# ── 3. Create AnnData ─────────────────────────────────────────────────────────
+adata = sc.AnnData(df_relevant)
+adata.obs = meta.loc[adata.obs_names, ["tissue", "stage", "source_name",
+                                        "GEO_Accession (exp)"]]
+
+# ── 4. Normalise and log transform ────────────────────────────────────────────
+sc.pp.normalize_total(adata, target_sum=1e4)
+sc.pp.log1p(adata)
+
+# ── 5. Assign r1-r4 regions by GSM number order ───────────────────────────────
+meta_micro = meta[meta['tissue'] ==
+    'Microdissected cortical-like ventricle from cerebral organoid'].copy()
+meta_micro['GSM_num'] = meta_micro['GEO_Accession (exp)'].str.replace(
+    'GSM', '').astype(int)
+meta_micro = meta_micro.sort_values('GSM_num')
+
+day53 = meta_micro[meta_micro['stage'] == '53 days']
+day58 = meta_micro[meta_micro['stage'] == '58 days']
+
+mid53 = len(day53) // 2
+r1_srr = set(day53.iloc[:mid53].index)
+r2_srr = set(day53.iloc[mid53:].index)
+
+mid58 = len(day58) // 2
+r3_srr = set(day58.iloc[:mid58].index)
+r4_srr = set(day58.iloc[mid58:].index)
+
+def assign_group(row):
+    srr = row.name
+    if row['tissue'] == 'Fetal neocortex':
+        return 'Fetal cortex'
+    elif srr in r1_srr:
+        return 'r1'
+    elif srr in r2_srr:
+        return 'r2'
+    elif srr in r3_srr:
+        return 'r3'
+    elif srr in r4_srr:
+        return 'r4'
+
+adata.obs['group'] = adata.obs.apply(assign_group, axis=1)
+
+# ── 6. Export for R ───────────────────────────────────────────────────────────
+genes = ['FOXG1', 'NEUROD6', 'OTX2']
+genes_present = [g for g in genes if g in adata.var_names]
+
+export_df = pd.DataFrame(
+    adata[:, genes_present].X.toarray() if hasattr(adata[:, genes_present].X, 'toarray')
+    else adata[:, genes_present].X,
+    columns=genes_present,
+    index=adata.obs_names
+)
+export_df['group'] = adata.obs['group'].values
+export_df.to_csv("export_violin_data.csv")
+print("Saved: export_violin_data.csv")
+
+# ── 7. Plot ───────────────────────────────────────────────────────────────────
+group_order = ['r1', 'r2', 'r3', 'r4', 'Fetal cortex']
+palette = {
+    'r1': '#1f77b4', 'r2': '#4a90d9',
+    'r3': '#2ca02c', 'r4': '#52be80',
+    'Fetal cortex': '#d62728',
+}
+
+fig, axes = plt.subplots(1, len(genes_present), figsize=(14, 5))
+
+for i, gene in enumerate(genes_present):
+    ax = axes[i] if len(genes_present) > 1 else axes
+    sc.pl.violin(
+        adata, keys=gene, groupby='group',
+        ax=ax, show=False, palette=palette,
+        rotation=0, order=group_order, inner='quartile'
+    )
+    ax.set_title(gene, fontsize=14, fontweight='bold')
+    ax.set_xlabel('')
+    if i == 0:
+        ax.set_ylabel('Log-normalised expression', fontsize=10)
+    else:
+        ax.set_ylabel('')
+
+fig.suptitle(
+    'Figure 3F replication\nFOXG1, NEUROD6, OTX2 expression:\n'
+    'Microdissected organoid regions vs fetal cortex', fontsize=12)
+plt.tight_layout()
+fig.savefig("figures/violin_3f.png", dpi=150, bbox_inches='tight')
+plt.close()
