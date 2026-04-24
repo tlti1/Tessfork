@@ -1,0 +1,508 @@
+cell,tSNE1,tSNE2,cluster,experiment,tissue,stage
+SRR2967100,2.558051,46.971863,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967101,19.877714,6.3253717,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967102,11.520076,57.799244,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967103,13.875377,-26.10005,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967104,-0.96955943,17.03333,C4,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967105,3.076444,-2.1688707,C4,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967106,3.0056012,36.30936,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967107,4.08903,-51.6412,C3,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967108,0.6335333,1.6367676,C4,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967109,50.494873,-15.912334,C5,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967110,21.180252,-23.185125,C5,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967111,21.62307,7.8818946,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967112,26.974522,9.417745,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967113,0.8807177,-43.337738,C3,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967114,12.97463,-25.025576,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967115,5.79841,-16.088295,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967116,-7.979056,46.094723,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967117,15.953689,13.608846,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967118,11.567801,14.138532,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967119,17.18956,8.508808,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967120,-11.949775,38.020855,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967121,17.678211,-17.885164,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967122,-6.4217587,55.304966,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967123,-12.900909,52.726776,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967124,14.148862,14.360663,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967125,10.3763275,-27.513735,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967126,-11.337982,37.66321,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967127,4.971634,12.523357,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967128,0.9620459,43.742256,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967129,-6.0048814,37.910114,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967130,21.15966,10.407594,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967131,-4.9054303,37.22336,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967132,11.738075,-19.04928,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967133,19.544815,17.302261,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967134,13.900382,17.967274,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967135,16.926933,-20.532797,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967136,-2.284557,30.093372,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967137,-7.6306376,48.567326,C1,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967138,12.143447,9.473693,C2,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967139,3.3745117,0.55405205,C4,Whole 33 days,Dissociated whole cerebral organoid,33 days
+SRR2967140,26.287603,4.299479,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967141,-14.298649,36.453636,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967142,2.1901996,-41.76894,C5,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967143,16.180172,-52.183914,C3,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967144,12.1294,47.023075,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967145,7.4957657,-19.996769,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967146,21.650187,-25.763441,C6,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967147,-11.542483,39.873043,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967148,10.7243395,-25.66477,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967149,27.303082,5.5970674,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967150,13.540387,11.315868,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967151,31.776196,7.6290026,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967152,18.35391,-25.11068,C5,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967153,-7.3926587,52.363556,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967154,15.990328,-14.049718,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967155,10.215481,17.650578,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967156,-4.9513793,56.175987,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967157,9.585768,16.511604,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967158,-1.6463621,55.473667,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967159,2.5857239,-47.95251,C3,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967160,12.306087,12.929929,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967161,-7.9488473,56.170116,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967162,19.589565,-23.885239,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967163,29.632868,-23.997316,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967164,7.946601,16.915897,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967165,2.0591226,50.03354,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967166,13.189622,0.631087,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967167,25.282764,-15.046828,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967168,1.4915512,50.90771,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967169,-2.790259,54.545795,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967170,10.063267,12.329135,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967171,-5.3512435,53.40761,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967172,-3.2069962,51.814175,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967173,-8.121495,45.278065,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967174,13.926397,-0.2087577,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967175,10.067416,46.582798,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967176,19.23998,6.60431,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967177,17.211233,15.896397,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967178,1.4444703,10.380355,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967179,17.708239,13.28067,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967180,-7.8422976,43.72796,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967181,23.636604,6.5060453,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967182,23.224775,-11.982001,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967183,8.582132,-13.3238945,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967184,13.881904,-2.9526744,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967185,15.910305,14.475991,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967186,10.479676,47.184223,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967187,-7.6940193,42.686417,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967188,-6.8588758,-8.033118,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967189,6.943902,-15.320242,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967190,23.025282,-11.202696,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967191,-1.3901379,52.741005,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967192,10.049723,-25.050344,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967193,-56.2688,11.437618,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967194,3.461802,-50.57083,C3,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967195,3.1773646,11.758789,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967196,-5.178925,-8.183285,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967197,-3.923339,49.607746,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967198,8.83047,46.140533,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967199,16.667427,4.9198284,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967200,13.89721,-1.75736,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967201,23.731691,-13.684076,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967202,7.5228295,-18.69045,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967203,2.1526175,10.976068,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967204,-4.562424,53.90944,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967205,-4.5626316,59.286663,C1,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967206,8.192878,-15.068743,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967207,9.450769,-15.709833,C2,Whole 35 days,Dissociated whole cerebral organoid,35 days
+SRR2967208,-2.612569,-0.37504435,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967209,-1.3295552,17.525787,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967210,2.2700875,27.257915,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967211,1.9128858,45.044926,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967212,50.619137,-17.235031,C5,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967213,-14.206793,26.665724,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967214,-18.098051,19.639132,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967215,0.5895668,-44.87771,C3,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967216,-1.7856228,50.11793,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967217,-1.3404428,42.639385,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967218,38.65021,50.36281,C7,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967219,-0.5063344,-3.0597627,C5,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967220,1.2328774,-0.068210244,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967221,-16.917645,14.445958,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967222,53.636353,-16.746714,C5,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967223,-1.4539326,38.10214,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967224,16.403828,-21.03551,C2,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967225,5.3488865,30.377634,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967226,-13.767415,27.454115,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967227,-1.6242757,-45.31614,C3,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967228,3.6431444,-5.416131,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967229,2.1335373,22.584562,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967230,3.4972262,21.304728,C2,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967231,1.7292902,-1.8104396,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967232,14.832229,9.964944,C2,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967233,-14.325508,13.963606,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967234,-3.72403,36.453438,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967235,31.96821,-33.10614,C3,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967236,21.981392,6.2589817,C2,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967237,0.9567758,30.75463,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967238,0.06909303,-7.667717,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967239,52.948933,-11.909832,C5,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967240,-0.22337285,29.598661,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967241,50.73374,-12.555423,C5,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967242,-11.985209,52.782368,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967243,1.5054984,22.852116,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967244,0.8196392,31.994524,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967245,-10.574307,16.230423,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967246,-1.0388086,25.159859,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967247,1.3015647,-45.578865,C3,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967248,-2.243049,-6.7639523,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967249,-13.913019,14.933559,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967250,-15.433278,13.817589,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967251,1.4806293,-2.6942103,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967252,-1.6573057,-8.98958,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967253,-2.4051254,36.90596,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967254,1.8369731,34.68089,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967255,49.88149,-13.430825,C5,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967256,-0.5497077,27.243134,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967257,7.4089813,8.983526,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967258,16.04647,-12.736613,C2,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967259,8.714804,9.266911,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967260,0.104766,42.277855,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967261,-1.4801387,-7.905269,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967262,18.916483,-20.26225,C6,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967263,31.16809,7.075601,C2,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967264,3.453656,-53.534904,C3,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967265,19.346174,-18.746752,C2,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967266,31.028831,-25.824385,C6,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967267,-3.0592957,-2.0917315,C5,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967268,3.8839674,30.658957,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967269,21.568245,4.244977,C2,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967270,10.839057,58.30636,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967271,32.528427,-25.135958,C6,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967272,51.81109,-11.896598,C5,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967273,-9.065598,37.093704,C1,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967274,16.812704,-52.375465,C3,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967275,15.6238365,1.6220134,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967276,-13.131675,12.447444,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967277,-9.399224,16.61316,C4,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967278,27.517992,10.294202,C2,Whole 37 days,Dissociated whole cerebral organoid,37 days
+SRR2967279,-36.568237,35.437675,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967280,41.216908,42.448147,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967281,-36.80538,36.310516,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967282,45.767162,-20.323368,C5,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967283,-35.611507,36.9474,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967284,53.05412,41.810806,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967285,-3.3197646,-12.901449,C9,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967286,-31.110245,19.49097,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967287,41.585518,70.36313,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967288,45.746803,71.67084,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967289,43.893173,69.78631,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967290,45.056145,62.191475,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967291,42.21912,44.425858,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967292,-10.013912,-57.63569,C3,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967293,53.564198,64.31769,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967294,44.66789,45.736973,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967295,51.81376,41.26682,C1,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967296,41.236935,51.933453,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967297,41.407364,-21.500713,C6,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967298,44.11399,71.216965,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967299,37.623726,-26.598492,C6,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967300,44.480545,65.7346,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967301,-27.427753,-14.946893,C9,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967302,-12.175113,-73.03432,C3,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967303,48.50458,59.146152,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967304,42.489567,-22.19791,C6,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967305,-24.039013,-12.718808,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967306,45.320625,45.223896,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967307,-25.397312,-15.145886,C9,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967308,-37.46825,39.330547,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967309,-38.641785,-18.25692,C9,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967310,42.491734,-20.216564,C6,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967311,40.292847,50.98394,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967312,45.53701,69.34904,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967313,-25.114006,-14.3326025,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967314,49.76453,41.99806,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967315,39.77716,-21.52101,C6,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967316,48.305405,58.46584,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967317,12.557238,23.900135,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967318,41.213608,43.842506,C6,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967319,-20.588121,-61.182735,C10,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967320,39.54772,45.33467,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967321,41.86692,61.362442,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967322,43.317204,-23.491455,C6,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967323,-2.1034086,-11.909279,C9,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967324,44.23045,66.7113,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967325,42.68008,73.00343,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967326,40.30593,53.296486,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967327,42.218563,52.09346,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967328,51.18234,41.510273,C1,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967329,42.733337,54.61246,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967330,41.867928,74.02149,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967331,38.22499,-21.300186,C6,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967332,-33.973263,16.31635,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967333,-38.37538,-22.783976,C9,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967334,51.91849,63.58509,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967335,43.34082,61.351913,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967336,49.47169,61.28426,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967337,-40.20517,-18.90081,C9,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967338,-34.469334,26.01511,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967339,-35.573162,15.5623045,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967340,50.46038,63.113655,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967341,43.653126,60.69898,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967342,-34.88354,24.666346,C8,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967343,37.51625,-28.55821,C6,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967344,41.45302,68.80201,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967345,44.172092,50.065098,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967346,-11.509208,-74.09522,C11,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967347,-29.161808,-14.970965,C9,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967348,48.868088,64.01792,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967349,54.05402,61.40258,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967350,-24.74332,-16.529457,C11,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967351,50.65503,65.942375,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967352,46.090027,74.205154,C7,Whole 41 days,Dissociated whole cerebral organoid,41 days
+SRR2967353,-21.10897,-59.530766,C11,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967354,4.563633,-68.93227,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967355,2.9911888,-66.601746,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967356,61.08902,-10.249503,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967357,39.221592,-34.56292,C6,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967358,-24.994583,16.516777,C4,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967359,-25.296946,-49.340313,C11,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967360,-40.51253,39.33925,C8,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967361,53.78956,57.789608,C7,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967362,16.110516,-46.29721,C9,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967363,58.16102,-7.01057,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967364,-38.24543,38.687397,C8,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967365,4.991819,-69.65356,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967366,-45.77831,39.544464,C8,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967367,-20.235296,19.571323,C8,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967368,54.77004,55.720085,C7,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967369,35.315033,-34.47766,C6,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967370,35.500587,-32.75238,C6,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967371,48.63208,-16.178804,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967372,3.31013,43.892857,C1,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967373,54.10297,-18.332531,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967374,-6.4169874,-65.041176,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967375,62.69506,-6.471341,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967376,-16.11452,-72.01739,C11,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967377,-15.225119,-69.24593,C11,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967378,42.494965,65.10822,C7,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967379,59.994774,-4.9048877,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967380,62.231422,-11.466473,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967381,59.374714,-6.587922,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967382,-42.38917,-16.64212,C9,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967383,49.030964,-10.571485,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967384,65.83099,-9.893572,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967385,-43.323586,-7.177688,C9,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967386,-44.7891,4.6903877,C9,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967387,57.151077,-15.321333,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967388,-4.69774,-62.66997,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967389,-16.240032,-69.85551,C11,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967390,6.8687425,30.4482,C4,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967391,-5.074762,-64.14824,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967392,0.08733536,-13.652335,C2,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967393,-0.043397363,-58.902626,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967394,55.046684,-11.5431385,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967395,-14.683397,-71.15953,C11,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967396,-40.535324,40.29642,C8,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967397,-1.5870606,-58.174538,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967398,-9.601168,-66.23235,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967399,58.324818,-14.813123,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967400,-37.345825,15.077876,C8,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967401,-4.1903915,34.536892,C1,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967402,-4.3809495,-60.89022,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967403,59.80205,-13.750195,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967404,-13.74361,16.796137,C4,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967405,-52.742546,-10.36794,C9,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967406,62.131493,-7.686233,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967407,-48.190155,-52.65991,C10,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967408,30.766298,-26.535973,C6,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967409,-24.180635,-60.59341,C11,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967410,35.151443,-31.867912,C6,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967411,54.59238,-5.8601456,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967412,33.028362,-30.5096,C6,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967413,-42.09389,-18.518015,C9,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967414,-14.139452,25.261631,C1,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967415,-26.803017,17.112335,C8,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967416,6.08294,-71.066475,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967417,-12.761942,-67.181465,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967418,-5.468216,-57.142635,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967419,33.739132,-31.892494,C6,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967420,-4.3154407,-58.566704,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967421,9.241771,-66.22883,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967422,-8.01497,-60.52773,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967423,44.565884,72.60251,C7,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967424,38.95955,-33.813416,C6,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967425,61.50252,-8.129736,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967426,-52.079773,-8.7896385,C9,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967427,38.361347,-29.82021,C6,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967428,0.56334805,-58.871834,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967429,1.478741,-65.277176,C3,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967430,-39.955833,-6.1190686,C9,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967431,52.965652,59.12802,C7,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967432,51.80444,-9.57619,C5,Whole 65 days,Dissociated whole cerebral organoid,65 days
+SRR2967433,-46.7503,36.075287,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967434,-50.694405,23.006378,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967435,-26.364933,-80.34554,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967436,57.55722,53.51774,C7,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967437,-48.982243,18.95009,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967438,61.30859,56.82265,C7,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967439,-54.183464,-4.1167746,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967440,-56.166195,35.057384,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967441,-25.845846,-79.25243,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967442,-51.903606,21.83428,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967443,-25.037752,-77.90757,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967444,-50.03901,23.153667,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967445,58.24131,53.690804,C7,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967446,62.25382,57.434128,C7,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967447,-36.281586,33.754566,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967448,64.23504,-9.058317,C5,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967449,-58.147076,-10.41452,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967450,-51.866184,25.52396,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967451,-21.473515,-49.954998,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967452,-58.546627,-5.924368,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967453,-28.601543,-75.18663,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967454,-58.946373,-0.73722535,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967455,-28.458887,-76.83636,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967456,61.66742,59.35339,C7,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967457,-50.700436,31.911776,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967458,-52.52244,31.420462,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967459,-46.679558,14.584985,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967460,63.490444,56.07489,C7,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967461,-57.608635,35.90252,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967462,-52.910233,28.39607,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967463,-59.035522,-0.09587149,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967464,-44.675552,16.89913,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967465,62.87559,59.6613,C7,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967466,-47.28125,37.068466,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967467,-55.324516,33.605717,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967468,60.029835,54.12443,C7,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967469,-52.85275,29.324526,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967470,-48.475117,13.5295315,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967471,60.052555,59.863434,C7,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967472,-24.361616,-77.14371,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967473,-38.755096,-3.2577736,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967474,-23.442299,-79.994156,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967475,-23.497894,-78.86801,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967476,-52.69707,33.814766,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967477,-26.546219,-72.36302,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967478,-52.85992,32.92223,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967479,-55.54753,36.055077,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967480,-18.164686,-68.36712,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967481,-43.97181,13.841438,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967482,-53.072716,-14.886153,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967483,-49.157265,-20.597878,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967484,-27.302042,-72.99258,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967485,-50.163204,-46.13613,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967486,-26.3663,-51.556793,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967487,-47.64032,38.259583,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967488,-49.06589,39.458748,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967489,-45.08643,-51.947857,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967490,-56.885406,-13.071605,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967491,-44.07035,-20.91521,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967492,-50.814583,-45.958908,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967493,-27.517036,-58.164906,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967494,-58.947495,-13.5935955,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967495,-45.575546,-50.732426,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967496,-56.98625,-16.208805,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967497,-57.24118,-14.61164,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967498,-56.59224,-17.348322,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967499,-61.089558,-14.282827,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967500,-21.460266,-77.192154,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967501,-46.921524,-51.748722,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967502,-39.68448,-53.55788,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967503,-43.220844,12.660165,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967504,-48.638874,-18.719465,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967505,-24.410624,-58.00166,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967506,-46.037125,-52.14371,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967507,-45.744545,-20.239456,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967508,-25.343845,-58.569763,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967509,-45.09561,10.2241125,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967510,-58.940704,-18.751743,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967511,-36.507446,40.912086,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967512,-56.30948,-19.942175,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967513,-45.681217,34.83677,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967514,-54.544212,-17.874876,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967515,-24.139612,-54.529713,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967516,-42.622124,13.98214,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967517,-52.11655,-45.66157,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967518,-59.225792,-16.224863,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967519,-40.357307,-53.86169,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967520,-54.960857,-14.824703,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967521,-50.00482,36.056606,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967522,-44.70059,14.784597,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967523,-27.963736,-73.96815,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967524,-35.783825,26.740091,C8,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967525,-26.24588,-56.34722,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967526,-30.767702,27.62861,C10,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967527,-57.206272,-5.456885,C9,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967528,-25.490032,-51.112762,C11,Microdissected 53 days,Microdissected cortical-like ventricle from cerebral organoid,53 days
+SRR2967529,-43.92294,-19.814692,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967530,-49.259247,-8.530524,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967531,-20.664516,-50.404327,C11,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967532,-44.18858,-2.7488859,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967533,-47.12061,-9.309704,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967534,-42.714134,0.0131534375,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967535,-34.77019,19.306559,C8,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967536,-51.98161,-4.0886645,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967537,-49.03307,-9.231539,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967538,26.676369,-15.941201,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967539,-22.224695,-53.427452,C11,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967540,-40.026836,-4.159082,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967541,-31.161663,18.027836,C8,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967542,-46.563763,-11.948675,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967543,-30.36704,17.187033,C8,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967544,15.026473,-19.581594,C2,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967545,-11.518868,-60.31704,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967546,-45.65654,-1.4777228,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967547,-41.104286,-10.983108,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967548,-43.4379,39.251064,C8,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967549,-14.379277,54.09576,C8,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967550,-20.52736,-57.072468,C11,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967551,-21.259289,-54.829533,C11,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967552,-36.842407,-22.163118,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967553,-33.274967,19.494963,C8,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967554,-17.14691,-70.37987,C11,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967555,-46.507942,-3.7956774,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967556,-36.172348,-21.650425,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967557,-46.08076,-6.0737667,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967558,-9.837298,-59.30867,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967559,-21.698298,-56.52715,C11,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967560,-44.081768,-1.8045523,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967561,-32.82285,27.27411,C8,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967562,-45.351368,-5.297024,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967563,-19.358768,-54.316006,C11,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967564,-48.60112,-17.293745,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967565,-29.885872,-72.90133,C11,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967566,-49.91579,-11.125523,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967567,-22.957752,-56.836994,C11,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967568,-40.581837,-10.166672,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967569,-32.89202,18.562927,C8,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967570,-49.634666,-6.987541,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967571,-42.21061,-6.025577,C9,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967572,26.813877,1.4738036,C2,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967573,14.97857,-41.480278,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967574,10.456474,-51.807934,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967575,-17.187733,48.042576,C1,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967576,4.6824007,-66.41505,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967577,27.533031,-0.8992748,C2,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967578,9.37692,-45.409798,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967580,-16.208288,48.690193,C1,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967581,-0.2627187,-67.23563,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967582,-0.570787,-41.803535,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967583,12.280201,-40.333427,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967584,2.159856,-67.70803,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967585,1.0072403,-69.22747,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967586,12.22848,-44.525646,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967587,27.782385,-1.7118101,C2,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967588,15.483257,-43.63337,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967589,17.82864,-28.549835,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967590,9.348763,-48.75983,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967591,-14.497008,50.366642,C1,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967592,-19.27861,47.21434,C2,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967593,12.7291975,-40.822327,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967594,0.11689106,-53.001,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967595,8.119514,-58.69786,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967596,9.327834,-50.18323,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967597,9.471052,-65.675354,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967598,6.8082557,-51.92731,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967599,14.849828,-45.18424,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967600,7.208947,-48.301716,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967601,10.743766,-48.260006,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967602,3.965148,-63.691147,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967603,8.717117,-61.51487,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967604,9.121176,-59.722084,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967605,11.013673,-58.32923,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967606,4.4216943,-62.331127,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
+SRR2967607,-37.550343,-8.834344,C3,Microdissected 58 days,Microdissected cortical-like ventricle from cerebral organoid,58 days
