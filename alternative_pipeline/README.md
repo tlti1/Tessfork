@@ -1,6 +1,6 @@
 ## HISAT2-based scRNA-seq Pipeline
 ## Replication of Camp et al. (2015) Figure 3D
-### University of Leicester — CO7093 Bioinformatics Coursework
+### University of Leicester — BS7120 Group Research Project Coursework
 
 ---
 
